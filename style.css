@@ -3,11 +3,11 @@ body {
     font-family: "Hiragino Sans", "Noto Sans JP", sans-serif;
     margin: 0;
     padding: 0;
-    background: #031027; /* 深い青 */
-    color: #d6e4ff; /* 青白 */
+    background: #031027;
+    color: #d6e4ff;
 }
 
-/* ===== ロード画面 ===== */
+/* ===== ロード画面（％表示） ===== */
 #loader {
     position: fixed;
     top: 0;
@@ -20,30 +20,27 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    transition: 0.5s ease;
+    transition: 0.6s ease;
 }
 
-.spinner {
-    width: 60px;
-    height: 60px;
-    border: 6px solid #0033aa;
-    border-top-color: #00aaff;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    box-shadow: 0 0 20px #00aaff;
+.percent-box {
+    padding: 20px 40px;
+    border: 2px solid #00ff66;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #00ff66;
+}
+
+#percent-text {
+    font-size: 40px;
+    color: #00ff66;
+    text-shadow: 0 0 15px #00ff66;
 }
 
 #loader p {
     margin-top: 15px;
-    color: #7ab8ff;
+    color: #7affc4;
     font-size: 18px;
-    text-shadow: 0 0 10px #7ab8ff;
-}
-
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
+    text-shadow: 0 0 10px #7affc4;
 }
 
 /* ===== ヘッダー ===== */
