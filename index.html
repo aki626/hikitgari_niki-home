@@ -8,10 +8,10 @@
 </head>
 <body>
 
-    <!-- ロード画面 -->
+    <!-- ロード画面（％表示） -->
     <div id="loader">
-        <div class="load-bar">
-            <div class="load-fill"></div>
+        <div class="percent-box">
+            <span id="percent-text">0%</span>
         </div>
         <p>Loading...</p>
     </div>
@@ -51,15 +51,24 @@
         <p>© 2026 歌枠・雑談オープンチャット</p>
     </footer>
 
-    <!-- ロード画面フェードアウト（5秒後に消える） -->
+    <!-- ％ロードの動作 -->
     <script>
-        setTimeout(() => {
-            const loader = document.getElementById("loader");
-            loader.style.opacity = "0";
-            setTimeout(() => {
-                loader.style.display = "none";
-            }, 600);
-        }, 5000); // ← ここがロード時間（5秒）
+        let percent = 0;
+        const percentText = document.getElementById("percent-text");
+
+        const interval = setInterval(() => {
+            percent += 2; // 2%ずつ増える（約5秒で100%）
+            percentText.textContent = percent + "%";
+
+            if (percent >= 100) {
+                clearInterval(interval);
+                const loader = document.getElementById("loader");
+                loader.style.opacity = "0";
+                setTimeout(() => {
+                    loader.style.display = "none";
+                }, 600);
+            }
+        }, 100); // 0.1秒ごとに更新
     </script>
 
 </body>
