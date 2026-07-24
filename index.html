@@ -10,7 +10,9 @@
 
     <!-- ロード画面 -->
     <div id="loader">
-        <div class="spinner"></div>
+        <div class="load-bar">
+            <div class="load-fill"></div>
+        </div>
         <p>Loading...</p>
     </div>
 
@@ -49,15 +51,15 @@
         <p>© 2026 歌枠・雑談オープンチャット</p>
     </footer>
 
-    <!-- ロード画面フェードアウト -->
+    <!-- ロード画面フェードアウト（5秒後に消える） -->
     <script>
-        window.addEventListener("load", () => {
+        setTimeout(() => {
             const loader = document.getElementById("loader");
             loader.style.opacity = "0";
             setTimeout(() => {
                 loader.style.display = "none";
-            }, 500);
-        });
+            }, 600);
+        }, 5000); // ← ここがロード時間（5秒）
     </script>
 
 </body>
