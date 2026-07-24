@@ -1,55 +1,49 @@
-/* ===== 全体 ===== */
 body {
     font-family: "Hiragino Sans", "Noto Sans JP", sans-serif;
     margin: 0;
     padding: 0;
-    background: #031027; /* 深い青 */
-    color: #d6e4ff; /* 淡い青白 */
+    background: #031027;
+    color: #d6e4ff;
 }
 
-/* ===== ヘッダー ===== */
 header {
-    background: linear-gradient(135deg, #0033aa, #001a66); /* 深い青グラデ */
+    background: linear-gradient(135deg, #0033aa, #001a66);
     padding: 25px;
     text-align: center;
-    box-shadow: 0 0 25px #0033aa; /* 青い発光 */
+    box-shadow: 0 0 25px #0033aa;
 }
 
 header h1 {
     margin: 0;
     font-size: 32px;
     color: #e8f0ff;
-    text-shadow: 0 0 10px #7ab8ff; /* 青い光 */
+    text-shadow: 0 0 10px #7ab8ff;
 }
 
-/* ===== メイン ===== */
 .main {
     padding: 25px;
 }
 
-/* ===== 見出し ===== */
 h2 {
-    color: #6fbaff; /* ネオン水色 */
+    color: #6fbaff;
     text-shadow: 0 0 10px #6fbaff;
 }
 
-/* ===== リスト ===== */
 ul {
     padding-left: 20px;
     line-height: 1.8;
 }
 
-/* ===== ボタン ===== */
 .join-button {
     display: inline-block;
     padding: 14px 22px;
-    background: linear-gradient(135deg, #0055ff, #0033aa); /* 青系グラデ */
+    background: linear-gradient(135deg, #0055ff, #0033aa);
     color: #fff;
     text-decoration: none;
     border-radius: 10px;
     font-weight: bold;
     margin-top: 12px;
-    box-shadow: 0 0 15px #0055ff; /* 青い発光 */
+    box-shadow: 0 0 15px #0055ff;
     transition: 0.25s;
 }
 
@@ -59,11 +53,10 @@ ul {
     transform: translateY(-3px);
 }
 
-/* ===== フッター ===== */
 footer {
     text-align: center;
     padding: 12px;
-    background: #001533; /* 深い青 */
+    background: #001533;
     margin-top: 40px;
     color: #9bb3ff;
     box-shadow: 0 0 20px #0033aa inset;
