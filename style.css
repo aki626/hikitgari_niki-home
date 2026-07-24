@@ -3,23 +3,23 @@ body {
     font-family: "Hiragino Sans", "Noto Sans JP", sans-serif;
     margin: 0;
     padding: 0;
-    background: #0a0f1f; /* 深いネイビーで未来感 */
-    color: #e0e8ff; /* 淡い青白で発光っぽく */
+    background: #031027; /* 深い青 */
+    color: #d6e4ff; /* 淡い青白 */
 }
 
 /* ===== ヘッダー ===== */
 header {
-    background: linear-gradient(135deg, #0ff, #8f00ff); /* ネオン青→紫グラデ */
+    background: linear-gradient(135deg, #0033aa, #001a66); /* 深い青グラデ */
     padding: 25px;
     text-align: center;
-    box-shadow: 0 0 25px #0ff; /* 発光 */
+    box-shadow: 0 0 25px #0033aa; /* 青い発光 */
 }
 
 header h1 {
     margin: 0;
     font-size: 32px;
-    color: #ffffff;
-    text-shadow: 0 0 10px #fff;
+    color: #e8f0ff;
+    text-shadow: 0 0 10px #7ab8ff; /* 青い光 */
 }
 
 /* ===== メイン ===== */
@@ -29,8 +29,8 @@ header h1 {
 
 /* ===== 見出し ===== */
 h2 {
-    color: #7df9ff; /* ネオン水色 */
-    text-shadow: 0 0 10px #7df9ff;
+    color: #6fbaff; /* ネオン水色 */
+    text-shadow: 0 0 10px #6fbaff;
 }
 
 /* ===== リスト ===== */
@@ -39,23 +39,23 @@ ul {
     line-height: 1.8;
 }
 
-/* ===== ボタン共通 ===== */
+/* ===== ボタン ===== */
 .join-button {
     display: inline-block;
     padding: 14px 22px;
-    background: linear-gradient(135deg, #00eaff, #0066ff);
+    background: linear-gradient(135deg, #0055ff, #0033aa); /* 青系グラデ */
     color: #fff;
     text-decoration: none;
     border-radius: 10px;
     font-weight: bold;
     margin-top: 12px;
-    box-shadow: 0 0 15px #00eaff;
+    box-shadow: 0 0 15px #0055ff; /* 青い発光 */
     transition: 0.25s;
 }
 
 .join-button:hover {
-    background: linear-gradient(135deg, #33ffff, #3399ff);
-    box-shadow: 0 0 25px #33ffff;
+    background: linear-gradient(135deg, #3388ff, #2255cc);
+    box-shadow: 0 0 25px #3388ff;
     transform: translateY(-3px);
 }
 
@@ -63,8 +63,8 @@ ul {
 footer {
     text-align: center;
     padding: 12px;
-    background: #0f0f2f;
+    background: #001533; /* 深い青 */
     margin-top: 40px;
     color: #9bb3ff;
-    box-shadow: 0 0 20px #4f4fff inset;
+    box-shadow: 0 0 20px #0033aa inset;
 }
