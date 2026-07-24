@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- ロード画面 -->
+    <div id="loader">
+        <div class="spinner"></div>
+        <p>Loading...</p>
+    </div>
+
     <header>
         <h1>歌枠・雑談オープンチャット</h1>
         <p>管理人が結構歌います🎤</p>
@@ -41,5 +48,17 @@
     <footer>
         <p>© 2026 歌枠・雑談オープンチャット</p>
     </footer>
+
+    <!-- ロード画面フェードアウト -->
+    <script>
+        window.addEventListener("load", () => {
+            const loader = document.getElementById("loader");
+            loader.style.opacity = "0";
+            setTimeout(() => {
+                loader.style.display = "none";
+            }, 500);
+        });
+    </script>
+
 </body>
 </html>
