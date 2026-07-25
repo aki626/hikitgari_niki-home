@@ -1,75 +1,83 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>歌枠・雑談オープンチャット</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Mode Switch</title>
+<style>
+  body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    background: #0b0c10;
+    color: #fff;
+    transition: 0.4s;
+  }
+
+  /* ボタン */
+  .mode-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #222;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 999;
+  }
+
+  /* ドパガキモード（虹色モード）画面全体 */
+  .dopagaki {
+    animation: rainbow-bg 6s linear infinite;
+    background-size: 400% 400%;
+  }
+
+  @keyframes rainbow-bg {
+    0% { background: linear-gradient(90deg,#ff0000,#ff7f00,#ffff00,#00ff00,#00ffff,#0000ff,#8b00ff); background-position: 0% 50%; }
+    100% { background: linear-gradient(90deg,#ff0000,#ff7f00,#ffff00,#00ff00,#00ffff,#0000ff,#8b00ff); background-position: 100% 50%; }
+  }
+
+  /* 虹色に光る文字 */
+  .rainbow-text {
+    font-size: 48px;
+    font-weight: 700;
+    background: linear-gradient(90deg,#ff0000,#ff7f00,#ffff00,#00ff00,#00ffff,#0000ff,#8b00ff);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: shine 6s linear infinite;
+  }
+
+  @keyframes shine {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+  }
+</style>
 </head>
+
 <body>
 
-    <!-- ロード画面（％表示） -->
-    <div id="loader">
-        <div class="percent-box">
-            <span id="percent-text">0%</span>
-        </div>
-        <p>Loading...</p>
-    </div>
+<button class="mode-btn" onclick="toggleMode()">普通モード</button>
 
-    <header>
-        <h1>歌枠・雑談オープンチャット</h1>
-        <p>管理人が結構歌います🎤</p>
-    </header>
+<h1 class="rainbow-text">ドパガキモード（虹色モード）</h1>
+<p>この画面はあき専用の虹色モード切り替えテストです。</p>
 
-    <section class="main">
-        <h2>ようこそ！</h2>
-        <p>
-            このオープンチャットはフレンドリーで優しい人がたくさんいます。<br>
-            LINE オープンチャット  
-            「歌枠・雑談　雑談もぜんぜん〇管理人が結構歌います」  
-            のホームページです。
-        </p>
+<script>
+  let dopagaki = false;
 
-        <h2>ルール</h2>
-        <ul>
-            <li>誹謗中傷や暴言などはやめてください。</li>
-            <li>誰かが歌っている最中にはマイクをオフにしてください。</li>
-        </ul>
+  function toggleMode() {
+    dopagaki = !dopagaki;
 
-        <h2>参加はこちら</h2>
-        <a class="join-button" href="https://openchat.line.me/jp/cover/vH0ZPsfZb97koToVOlrlb_AJPMq50wdPjY1A3ZEXmghF9zzEw5ma70KI6JQ" target="_blank">
-            オープンチャットに参加する
-        </a>
-
-        <h2>メンバー一覧</h2>
-        <a class="join-button" href="https://yatto0912-hash.github.io/Hikigatari-utawaku-WIKI/" target="_blank">
-            メンバー一覧を見る
-        </a>
-    </section>
-
-    <footer>
-        <p>© 2026 歌枠・雑談オープンチャット</p>
-    </footer>
-
-    <!-- ％ロードの動作 -->
-    <script>
-        let percent = 0;
-        const percentText = document.getElementById("percent-text");
-
-        const interval = setInterval(() => {
-            percent += 2; // 2%ずつ増える（約5秒で100%）
-            percentText.textContent = percent + "%";
-
-            if (percent >= 100) {
-                clearInterval(interval);
-                const loader = document.getElementById("loader");
-                loader.style.opacity = "0";
-                setTimeout(() => {
-                    loader.style.display = "none";
-                }, 600);
-            }
-        }, 100); // 0.1秒ごとに更新
-    </script>
+    if (dopagaki) {
+      document.body.classList.add("dopagaki");
+      document.querySelector(".mode-btn").textContent = "ドパガキモード";
+    } else {
+      document.body.classList.remove("dopagaki");
+      document.querySelector(".mode-btn").textContent = "普通モード";
+    }
+  }
+</script>
 
 </body>
 </html>
